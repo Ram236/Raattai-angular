@@ -1,0 +1,13 @@
+
+
+/**/
+.product-list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    .card {
+        color:#8a0d16 !important;
+        font-weight: bold;
+    }
+}
