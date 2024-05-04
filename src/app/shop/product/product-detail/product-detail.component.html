@@ -1,0 +1,50 @@
+<div class="mt-5 container" *ngIf="productDetail">
+  <div class="row">
+    <div class="col-lg-6">
+    <div class="row">
+        <div class="col-lg-3 gallery" >
+            <div class="image" *ngFor="let image of productDetail.galleryImages"><img [src]="image.filename" width="100%" (click)="focusImage(image)"/></div>
+        </div>
+        <div class="col-lg-9">
+            <img [src]="focussedImage" width="100%"/>
+        </div>
+    </div>
+       
+    </div>
+    <div class="col-lg-6">
+      <div class="detail-section">
+        <h3>{{ productDetail.title }}</h3>
+        <h4 class="mt-5">{{ productDetail.price | currency : "INR" }}</h4>
+
+        <h4 class="mt-5"></h4>
+        <div class="form-group row">
+          <label for="inputPassword" class="col-sm-2 col-form-label"
+            >Quantity</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="number"
+              class="form-control"
+              id="qty"
+              placeholder="Quantity"
+            />
+          </div>
+        </div>
+
+        <div class="detail-btn-container mt-5">
+          <button class="btn btn-primary" (click)="add2Cart(productDetail)">Add to Cart</button>
+        </div>
+        <div class="mt-5 raattai-font">
+          <div
+            class="detail"
+            *ngIf="productDetail.desc.split('\r\n\r\n').length > 0"
+          >
+            <p *ngFor="let p of productDetail.desc.split('\r\n\r\n')">
+              {{ p }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

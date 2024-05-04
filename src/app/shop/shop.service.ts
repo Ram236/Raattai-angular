@@ -15,4 +15,12 @@ export class ShopService {
       headers: headers,
     });
   }
+
+  add2cart(id:string):Observable<any>{
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get(environment.apiUrl + 'user/cart/add-to-cart/:'+id, {
+      headers: headers,
+    });
+  }
 }

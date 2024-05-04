@@ -6,3 +6,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 h3{
     color:#8a0d16 !important;
 }
+
+.btn-primary{    
+    color: #8a0d16!important;
+    background-color: white!important;
+    border-color:#8a0d16!important;
+    &:hover{
+        color:white!important;
+        background-color: #8a0d16!important;
+    }
+}
+
+.raattai-font {
+    color:#8a0d16 !important;
+}

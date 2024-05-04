@@ -4,10 +4,12 @@ import { ShopComponent } from './shop.component';
 import { ShopRoutingModule } from './shop-routing.module';
 import { MaterialModule } from '../material.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
-    ShopComponent
+    ShopComponent,
+    ProductDetailComponent
   ],
   imports: [
     CommonModule,
