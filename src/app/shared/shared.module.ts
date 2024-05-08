@@ -6,6 +6,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { InfoDialogComponent } from './info-dialog/info-dialog.component';
+import { MaterialModule } from '../material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -13,14 +15,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    InfoDialogComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     HttpClientModule,
-    FormsModule,ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModule,
   ],
-  exports:[HeaderComponent,FooterComponent]
+  exports: [HeaderComponent, FooterComponent, InfoDialogComponent],
 })
-export class SharedModule { }
+export class SharedModule {}

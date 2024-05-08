@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { product } from '../product';
 import { ShopService } from '../../shop.service';
+import { InfoDialogComponent } from 'src/app/shared/info-dialog/info-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-product-detail',
@@ -12,7 +14,7 @@ import { ShopService } from '../../shop.service';
 export class ProductDetailComponent {
   productDetail: product | undefined;
   focussedImage: string | undefined;
-  constructor(private ss: ShopService) {}
+  constructor(private ss: ShopService, private dialog :MatDialog) {}
   ngOnInit() {
     this.productDetail = history.state;
     this.focussedImage = this.productDetail?.image;
@@ -23,8 +25,11 @@ export class ProductDetailComponent {
   }
 
   add2Cart(product:product){
-    this.ss.add2cart(product._id).subscribe(data=>{
-      alert('added');
+    this.ss.add2cart(product.slug).subscribe(data=>{
+      this.dialog.open(InfoDialogComponent, {
+        width: '500px',
+        data: "Item added to cart",
+      });    
     })
   }
 }

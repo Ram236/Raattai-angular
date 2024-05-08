@@ -5,25 +5,29 @@
             <form [formGroup]="addUser"  >
                 <div class="user-details">
                     <div class="input-box">
-                        <span class="details">User Name</span>
-                        <input type="text" name="userName" placeholder="Enter your name" value="" required  formControlName="firstName"/>
+                        <span class="details">Name</span>
+                        <input type="text" name="name" placeholder="Enter your name" value="" required  formControlName="name"/>
                     </div>
                     <div class="input-box">
                         <span class="details">Email</span>
-                        <input type="email" name="email" placeholder="Enter your email" value="" required />
+                        <input type="email" name="email" placeholder="Enter your email" value="" required formControlName="email"/>
                     </div>
                     <div class="input-box">
-                        <span class="details">Phone Number</span>
-                        <input type="tel" name="mobileNumber" placeholder="Enter your number" value="" required />
+                        <span class="details">UserName</span>
+                        <input type="tel" name="username" placeholder="Enter your username" value="" required formControlName="username"/>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Mobile</span>
+                        <input type="tel" name="phoneNumber" placeholder="Enter your number" value="" required formControlName="phoneNumber"/>
                     </div>
                     <div class="input-box">
                         <span class="details">Password</span>
-                        <input type="password" name="password" placeholder="Enter your password" value="" required />
+                        <input type="password" name="password" placeholder="Enter your password" value="" required formControlName="password"/>
                     </div>
                     <div class="input-box">
                         <span class="details">Confirm Password</span>
                         <input type="password" name="confirmPassword" placeholder="Confirm your password" value=""
-                            required />
+                            required formControlName="confirm_password"/>
                     </div>
                 </div>
                 <div class="button_sub">
