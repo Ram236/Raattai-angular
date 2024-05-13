@@ -7,8 +7,10 @@ import { RegisterComponent } from './register/register.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { InfoDialogComponent } from './info-dialog/info-dialog.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { MaterialModule } from '../material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UtilityService } from './services/utility.service';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     RegisterComponent,
     InfoDialogComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     CommonModule,
@@ -26,6 +29,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     MaterialModule,
   ],
+  providers:[UtilityService],
   exports: [HeaderComponent, FooterComponent, InfoDialogComponent],
 })
 export class SharedModule {}

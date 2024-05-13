@@ -1,0 +1,27 @@
+.counter {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    color: #A94724;
+}
+
+#increment-btn,
+#decrement-btn {
+    height: 30px;
+    width: 40px;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: #ffffff;
+    border: 2px solid #A94724;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#increment-btn:hover,
+#decrement-btn:hover {
+    background-color: #A94724;
+    color: #ffffff;
+}

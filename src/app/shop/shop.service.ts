@@ -16,10 +16,10 @@ export class ShopService {
     });
   }
 
-  add2cart(slug:string):Observable<any>{
+  add2cart(slug:string, id:string):Observable<any>{
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.get(environment.apiUrl + 'user/cart/add-to-cart/'+slug, {
+    return this.http.post(environment.apiUrl + 'user/cart/add-to-cart/'+slug+'/'+id, {
       headers: headers,
     });
   }

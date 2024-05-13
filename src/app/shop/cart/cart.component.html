@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <!-- items-->
+    <div class="col-lg-10">
+      <h3>Shopping cart</h3>
+      <div class="row item" *ngFor="let item of cartitems">
+        <div class="col-lg-8 left-section">
+          <div>
+            {{ item.product.title }}
+          </div>
+          <div>Qty: {{ item.quantity }}</div>
+        </div>
+        <div class="col-lg-4 text-end">
+          {{ item.product.price | currency : "INR" }}
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2">
+      <h3>Summary</h3>
+      <div class="summary-box">
+        {{ cartTotal | currency : "INR" }}
+        <div class="btn-container">
+          <button class="btn btn-primary">Checkout & Pay</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

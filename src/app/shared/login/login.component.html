@@ -10,7 +10,7 @@
       <label htmlFor="password" class="loginlabel">Password</label>
       <input type="password" class="loginInput" [(ngModel)]="credentials.password" name="pasword"/>
       <div class="forgetPassword">
-        <a href="#">Forget Password?</a>
+        <a href="" [routerLink]="'/forgot-password'">Forget Password?</a>
       </div>
 
       <div class="loginButtons">

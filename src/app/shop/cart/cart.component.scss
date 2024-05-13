@@ -1,0 +1,21 @@
+
+@import '../../../constants.scss';
+.item{
+    border: 1px solid #e4e6e7;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color:$raattai;
+    padding:20px;
+}
+
+.summary-box{
+    border: 1px solid #e4e6e7;
+    border-radius: 10px;
+    color:$raattai;
+    padding: 10px;
+}
+
+.btn-container{
+    margin:10px 10px;
+}

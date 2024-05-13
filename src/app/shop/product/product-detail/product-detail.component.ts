@@ -25,7 +25,7 @@ export class ProductDetailComponent {
   }
 
   add2Cart(product:product){
-    this.ss.add2cart(product.slug).subscribe(data=>{
+    this.ss.add2cart(product.slug, product._id).subscribe(data=>{
       this.dialog.open(InfoDialogComponent, {
         width: '500px',
         data: "Item added to cart",
