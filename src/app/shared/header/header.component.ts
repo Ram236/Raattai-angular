@@ -1,7 +1,7 @@
 import { Component, OnInit, signal } from '@angular/core';
-import { UtilityService } from '../services/utility.service';
 import { CartService } from 'src/app/shop/cart/cart.service';
 import { LoginApiService } from '../login/login.service';
+import { AppService } from 'src/app/app.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -12,27 +12,33 @@ export class HeaderComponent implements OnInit {
   showHeader = true;
   loggedIn = false;
   user:any;
-  cartCount = signal(0);
-  constructor(private util: UtilityService, private cartService: CartService, private loginService:LoginApiService) {
-    this.util.cartCount.subscribe((data) => {
-      this.cartCount = signal(data);
-    });
-    this.util.loginObs.subscribe(data=>{
+  cartCount = 0;
+  constructor(private as:AppService, private loginService: LoginApiService) {
+    this.as.loginObs.subscribe(data=>{
       this.loggedIn = data;
+    })
+    this.as.cartCountObs.subscribe(data=>{
+      this.cartCount = data;
     })
   }
   ngOnInit(): void {
-    this.user = JSON.parse(localStorage.getItem('user')!)
-    this.cartService.getCartItems(this.user.user._id).subscribe(data=>{
-      console.log(data);
-      this.util.setCartCount(data.cart.items.length);
-    });
+    // this.user = JSON.parse(localStorage.getItem('user')!)
+    // if(this.user){
+    //   this.cartService.getCartItems().subscribe(data=>{
+    //     console.log(data);
+       
+    //   });
+    // }
+    
   }
 
   logout(){
     this.loginService.logout().subscribe(data=>{
-      this.util.setLogin(false);
+      this.loggedIn = false;
       localStorage.removeItem('user');
+      this.as.setLogin(false);
+      this.as.setCartCount(0);
     })
+    
   }
 }

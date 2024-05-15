@@ -10,7 +10,7 @@ import { InfoDialogComponent } from './info-dialog/info-dialog.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { MaterialModule } from '../material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UtilityService } from './services/utility.service';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { UtilityService } from './services/utility.service';
     ReactiveFormsModule,
     MaterialModule,
   ],
-  providers:[UtilityService],
+  providers:[],
   exports: [HeaderComponent, FooterComponent, InfoDialogComponent],
 })
 export class SharedModule {}
