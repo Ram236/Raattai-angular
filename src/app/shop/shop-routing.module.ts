@@ -5,7 +5,7 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 import { CartComponent } from './cart/cart.component';
 import { PayementSuccessComponent } from './payement-success/payement-success.component';
 import { PayementFailureComponent } from './payement-failure/payement-failure.component';
-
+import {CanActivateRoute} from '../shared/services/authguard.service';
 const routes: Routes = [
   {
     path: '',
@@ -23,6 +23,7 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartComponent,
+    canActivate:[CanActivateRoute]
   },
   { path: 'success-payment', component: PayementSuccessComponent },
   { path: 'failure-payment', component: PayementFailureComponent },

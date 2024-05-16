@@ -4,6 +4,7 @@ import { LoginComponent } from './shared/login/login.component'
 import { RegisterComponent } from './shared/register/register.component';
 import { ForgotPasswordComponent } from './shared/forgot-password/forgot-password.component';
 
+
 const routes: Routes = [
   {
     path: '',

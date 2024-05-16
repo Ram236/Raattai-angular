@@ -17,8 +17,12 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.userDetails = JSON.parse(localStorage.getItem('user')!)
-    this.cartService.getCartItems().subscribe(data=>{
-      this.as.setCartCount(data.count);
-    })
+    //fetch cart count when user loggedin
+    if(this.userDetails){
+      this.cartService.getCartItems().subscribe(data=>{
+        this.as.setCartCount(data.count);
+      })
+    }
+    
   }
 }

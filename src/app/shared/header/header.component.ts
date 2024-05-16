@@ -2,6 +2,8 @@ import { Component, OnInit, signal } from '@angular/core';
 import { CartService } from 'src/app/shop/cart/cart.service';
 import { LoginApiService } from '../login/login.service';
 import { AppService } from 'src/app/app.service';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -11,34 +13,30 @@ import { AppService } from 'src/app/app.service';
 export class HeaderComponent implements OnInit {
   showHeader = true;
   loggedIn = false;
-  user:any;
+  user: any;
   cartCount = 0;
-  constructor(private as:AppService, private loginService: LoginApiService) {
-    this.as.loginObs.subscribe(data=>{
+  constructor(
+    private as: AppService,
+    private loginService: LoginApiService,
+    private router: Router,
+    private auth:AuthService
+  ) {
+    this.as.loginObs.subscribe((data) => {
       this.loggedIn = data;
-    })
-    this.as.cartCountObs.subscribe(data=>{
+    });
+    this.as.cartCountObs.subscribe((data) => {
       this.cartCount = data;
-    })
+    });
   }
-  ngOnInit(): void {
-    // this.user = JSON.parse(localStorage.getItem('user')!)
-    // if(this.user){
-    //   this.cartService.getCartItems().subscribe(data=>{
-    //     console.log(data);
-       
-    //   });
-    // }
-    
-  }
+  ngOnInit(): void {}
 
-  logout(){
-    this.loginService.logout().subscribe(data=>{
+  logout() {
+    this.loginService.logout().subscribe((data) => {
       this.loggedIn = false;
-      localStorage.removeItem('user');
+      this.auth.logout();
       this.as.setLogin(false);
       this.as.setCartCount(0);
-    })
-    
+      this.router.navigate(['/home']);
+    });
   }
 }

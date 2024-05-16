@@ -13,7 +13,7 @@ export class CartComponent implements OnInit {
   cartitems: any[] = [];
   cartTotal: number = 0;
   ngOnInit(): void {
-    const userid = JSON.parse(localStorage.getItem('user')!).user._id;
+    const userid = JSON.parse(localStorage.getItem('user')!)?.user?._id;
     this.cs.getCartItems().subscribe((res) => {
       this.cartitems = res.cart.items;
       this.cartTotal = res.total;

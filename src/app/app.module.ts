@@ -9,7 +9,7 @@ import { AppInterceptor } from './app.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppService } from './app.service';
-
+import { CanActivateRoute, Permissions } from './shared/services/authguard.service';
 @NgModule({
   declarations: [
     AppComponent
@@ -22,11 +22,11 @@ import { AppService } from './app.service';
     MaterialModule
     
   ],
-  providers: [AppService,{
+  providers: [AppService,Permissions,{
     provide: HTTP_INTERCEPTORS,
     useClass: AppInterceptor,
     multi: true
-  }],
+  }, CanActivateRoute],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,6 +11,7 @@ import { CartService } from './cart/cart.service';
 import { PayementSuccessComponent } from './payement-success/payement-success.component';
 import { PayementFailureComponent } from './payement-failure/payement-failure.component';
 
+
 @NgModule({
   declarations: [
     ShopComponent,
