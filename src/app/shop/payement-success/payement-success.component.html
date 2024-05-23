@@ -6,6 +6,11 @@
             </path>
         </svg>
         <h3 class="text-gray-900 font-semibold text-center">Payment Done!</h3>
+        <h4 class="text-gray-900 font-semibold text-center"><u>Transaction Details</u></h4>
+        <div>Order No: <b>{{transaction.order_id}}</b></div>
+        <div>Amount: <b>{{transaction.amount}}</b></div>
+        <div>Transaction Ref: <b>{{transaction.bank_ref_no}}</b></div>
+        <div>Tracking Id: <b>{{transaction.tracking_id}}</b></div>
         <p class="text-gray-600 ">Thank you for completing your secure online payment.</p>
         <p> Have a great day! </p>
         <div class="back">

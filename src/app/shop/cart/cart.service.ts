@@ -17,10 +17,25 @@ export class CartService {
   }
 
 
-  initiatePayment():Observable<any>{
+  initiatePayment1():Observable<any>{
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'text/html');
-    return this.http.post(environment.localUrl + 'ccavRequestHandler', `"payment_string":"merchant_id=3168733&order_id=0001&currency=INR&amount=1.00&redirect_url=http://localhost:3000/ccavResponse&cancel_url=http://localhost:3000/ccavResponse&language=EN"`);
+    return this.http.post(environment.localUrl + 'ccavRequestHandler', `merchant_id=3168733&order_id=0001&currency=INR&amount=1.00&redirect_url=http://localhost:3000/ccavResponse&cancel_url=http://localhost:3000/ccavResponse&language=EN`);
+  }
+
+  initiatePayment(payload:any):Observable<any>{
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'text/html');
+    return this.http.post(environment.localUrl + 'ccavRequestHandler', {currency:payload.currency,amount:payload.amount});
+  }
+
+
+  retrieveTransactionDetails(tid:string):Observable<any>{
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get(environment.localUrl + 'orders/order/'+tid, {
+      headers: headers,
+    });
   }
 
 }

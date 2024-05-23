@@ -12,11 +12,11 @@ export class AuthService {
   } 
 
   isAuthenticatedUser(): boolean {
-    return this.isAuthenticated;
+    return !!localStorage.getItem('user') || this.isAuthenticated;
   }
   login(userRes:any){
     localStorage.setItem('user', JSON.stringify(userRes));
-    this.isAuthenticated = !!localStorage.getItem('user');
+    this.isAuthenticated = true;
   }
 
   logout(): void {

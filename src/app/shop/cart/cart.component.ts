@@ -23,8 +23,10 @@ export class CartComponent implements OnInit {
   encRequest:any;
   accessCode = 'AVCT47LA95AS55TCSA';
   redirect() {
-    this.cs.initiatePayment().subscribe(data=>{
+    let payload = {amount:this.cartTotal, currency:'INR'}
+    this.cs.initiatePayment(payload).subscribe(data=>{
       this.encRequest = data.key;
+      console.log(this.encRequest);
       setTimeout((_: any) => this.form?.nativeElement.submit());
       //this.router.navigate(['/shop/success-payment']);
     }, err=>{
