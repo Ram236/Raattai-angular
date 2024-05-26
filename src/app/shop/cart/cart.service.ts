@@ -38,4 +38,12 @@ export class CartService {
     });
   }
 
+  clearCart():Observable<any>{
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get(environment.localUrl + 'user/cart/my-cart/clear/', {
+      headers: headers,
+    });
+  }
+
 }

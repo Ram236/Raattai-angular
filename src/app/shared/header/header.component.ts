@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
     private as: AppService,
     private loginService: LoginApiService,
     private router: Router,
-    private auth:AuthService
+    private auth: AuthService
   ) {
     this.as.loginObs.subscribe((data) => {
       this.loggedIn = data;
@@ -31,12 +31,18 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {}
 
   logout() {
-    this.loginService.logout().subscribe((data) => {
-      this.loggedIn = false;
-      this.auth.logout();
-      this.as.setLogin(false);
-      this.as.setCartCount(0);
-      this.router.navigate(['/home']);
+    this.loginService.logout().subscribe({
+      next: () => {
+        this.loggedIn = false;
+        this.auth.logout();
+        this.as.setLogin(false);
+        this.as.setCartCount(0);
+        this.router.navigate(['/home']);
+      },
+      error: (err) => {
+        console.log(err);
+        this.router.navigate(['/home'])
+      },
     });
   }
 }

@@ -6,6 +6,11 @@
                 d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
         </svg>
         <h3 class="text-gray-900 font-semibold text-center">Payment Failure!</h3>
+        <!-- <h4 class="text-gray-900 font-semibold text-center"><u>Transaction Details</u></h4> -->
+        <div>Order No: <b>{{transaction.order_id}}</b></div>
+        <div>Amount: <b>{{transaction.amount}}</b></div>
+        <div>Transaction Ref: <b>{{transaction.bank_ref_no}}</b></div>
+        <div>Tracking Id: <b>{{transaction.tracking_id}}</b></div>
         <p class="text-gray-600 ">Unfortunately, the payement for this order has failed</p>
         <p> Try again after sometime </p>
         <div class="back">

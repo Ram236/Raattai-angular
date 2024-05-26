@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     //fetch cart count when user loggedin
     if(this.userDetails){
       this.cartService.getCartItems().subscribe(data=>{
-        this.as.setCartCount(data.count);
+        this.as.setCartCount(data.cart.items.length);
       })
     }
     
