@@ -11,6 +11,7 @@ import { AuthService } from '../services/auth.service';
   providers: [CartService],
 })
 export class HeaderComponent implements OnInit {
+  isMobileMenuVisible = false;
   showHeader = true;
   loggedIn = false;
   user: any;
@@ -29,6 +30,9 @@ export class HeaderComponent implements OnInit {
     });
   }
   ngOnInit(): void {}
+  toggleMobileMenu() {
+    this.isMobileMenuVisible = !this.isMobileMenuVisible;
+  }
 
   logout() {
     this.loginService.logout().subscribe({
@@ -46,3 +50,4 @@ export class HeaderComponent implements OnInit {
     });
   }
 }
+
