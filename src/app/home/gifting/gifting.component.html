@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="Registercontainer">
+        <div class="title"><b>Gifting</b></div>
+        <div class="content">
+            <form id="giftingForm" #giftForm="ngForm" novalidate>
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Number of Gifts</span>
+                        <input type="number" name="giftsNo" placeholder="Enter the number of gifts" min="0"  required  [(ngModel)]="formData.NoOfGifts"/>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Number of Looms</span>
+                        <input type="number" name="loomNo" placeholder="Enter the number of looms" min="0" required [(ngModel)]="formData.NoOfLooms"/>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Loom Name</span>
+                        <input type="text" name="loomName" placeholder="Enter the loom name" pattern="[A-Za-z\s]+"
+                            title="Loom name should contain only letters and spaces" required [(ngModel)]="formData.loomName"/>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Person name to connect</span>
+                        <input type="text" name="personName" placeholder="Enter the person name to connect"
+                            pattern="[A-Za-z\s]+" title="Person name should contain only letters and spaces" required [(ngModel)]="formData.PersonToConnect"/>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Email</span>
+                        <input type="email" name="email"  placeholder="Enter your email" required [(ngModel)]="formData.Email"/>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Contact Number</span>
+                        <input name="contactNumber" placeholder="Enter contact number" 
+                        type="number" maxlength="10" title="Please enter a valid 10-digit phone number" required [(ngModel)]="formData.ContactNumber"/>
+                       
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Address</span>
+                        <textarea name="address" placeholder="Enter the address" required [(ngModel)]="formData.Address"></textarea>
+                    </div>
+
+                    <div class="button_sub">
+                        <button type="submit" (click)="onSubmit()"  [disabled]="!giftForm.valid ">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- <script>
+    document.getElementById('giftingForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        var contactNumber = document.querySelector('input[name="contactNumber"]').value;
+        if (!/^\d{10}$/.test(contactNumber)) {
+            alert('Please enter a valid 10-digit contact number.');
+            return;
+        }
+
+        var loomName = document.querySelector('input[name="loomName"]').value;
+        var personName = document.querySelector('input[name="personName"]').value;
+        var namePattern = /^[A-Za-z\s]+$/;
+
+        if (!namePattern.test(loomName)) {
+            alert('Loom name should contain only letters and spaces.');
+            return;
+        }
+
+        if (!namePattern.test(personName)) {
+            alert('Person name should contain only letters and spaces.');
+            return;
+        }
+    });
+</script> -->

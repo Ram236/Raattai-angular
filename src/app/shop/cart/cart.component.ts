@@ -2,6 +2,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CartService } from './cart.service';
 import { Router } from '@angular/router';
 import { AppService } from 'src/app/app.service';
+import { InfoDialogComponent } from 'src/app/shared/info-dialog/info-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-cart',
@@ -20,28 +22,37 @@ export class CartComponent implements OnInit {
       this.cartTotal = res.total;
     });
   }
-  constructor(private cs: CartService, private router: Router, private as: AppService) {}
-  encRequest:any;
+  constructor(
+    private cs: CartService,
+    private router: Router,
+    private as: AppService,
+    private dialog:MatDialog
+  ) {}
+  encRequest: any;
   accessCode = 'AVCT47LA95AS55TCSA';
   redirect() {
-    let payload = {amount:this.cartTotal, currency:'INR'}
-    this.cs.initiatePayment(payload).subscribe(data=>{
-      this.encRequest = data.key;
-      console.log(this.encRequest);
-      setTimeout((_: any) => this.form?.nativeElement.submit());
-      //this.router.navigate(['/shop/success-payment']);
-    }, err=>{
-      console.log(err.error)
-    })
-    
+    let payload = { amount: this.cartTotal, currency: 'INR' };
+    this.cs.initiatePayment(payload).subscribe(
+      (data) => {
+        this.encRequest = data.key;
+        console.log(this.encRequest);
+        setTimeout((_: any) => this.form?.nativeElement.submit());
+        //this.router.navigate(['/shop/success-payment']);
+      },
+      (err) => {
+        console.log(err.error);
+      }
+    );
   }
 
-
-  clearCart(){
-    this.cs.clearCart().subscribe(data=>{
-      alert('cart cleared')
+  clearCart() {
+    this.cs.clearCart().subscribe((data) => {
+      const dialogRef = this.dialog.open(InfoDialogComponent, {
+        width: '500px',
+        data: 'Cart Cleared Successfully',
+      });      
       this.as.setCartCount(0);
       this.router.navigate(['/shop']);
-    })
+    });
   }
 }
