@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, ViewChild, signal } from '@angular/core';
 import { CartService } from 'src/app/shop/cart/cart.service';
 import { LoginApiService } from '../login/login.service';
 import { AppService } from 'src/app/app.service';
@@ -45,9 +45,8 @@ export class HeaderComponent implements OnInit {
       },
       error: (err) => {
         console.log(err);
-        this.router.navigate(['/home'])
+        this.router.navigate(['/home']);
       },
     });
   }
 }
-

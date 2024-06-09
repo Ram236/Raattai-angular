@@ -1,0 +1,22 @@
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+}

@@ -1,0 +1,145 @@
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.contactUs {
+    display: flex;
+    justify-content: center;
+    padding: 25px 30px;
+}
+
+.conatactUsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px 30px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    font-family: 'Poppins', sans-serif;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 500;
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.input-box span {
+    font-weight: 600;
+}
+
+.content form .user-details {
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.user-details .input-box {
+    margin-bottom: 15px;
+}
+
+form .input-box span.details {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 25px;
+}
+
+.user-details .input-box input[type="text"],
+.user-details .input-box input[type="number"],
+.user-details .input-box input[type="email"],
+.user-details .input-box select {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+}
+
+.user-details .input-box input[type="text"]:focus,
+.user-details .input-box input[type="number"]:focus,
+.user-details .input-box input[type="email"]:focus,
+.user-details .input-box select:focus {
+    border-color: #A94724;
+}
+
+.user-details .input-box input[type="number"]::-webkit-outer-spin-button,
+.user-details .input-box input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.user-details .input-box input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.user-details .input-box textarea {
+    font-family: 'Poppins', sans-serif;
+    height: 70px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    resize: none;
+}
+
+.user-details .input-box textarea:focus {
+    border-color: #A94724;
+}
+
+.user-details .input-box textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.button_sub {
+    height: 40px;
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.button_sub button {
+    height: 100%;
+    width: 35%;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #FF5733, #A94724);
+}
+
+.button_sub button:hover {
+    transform: scale(0.99);
+    background: linear-gradient(-135deg, #FF5733, #A94724);
+}
+
+@media screen and (max-width: 900px) {
+    .contactUs {
+        padding: 10px 10px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .contactUs {
+        padding: 10px 0;
+    }
+
+    .conatactUsContainer {
+        width: 400px;
+    }
+}

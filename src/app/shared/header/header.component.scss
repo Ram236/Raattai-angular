@@ -39,11 +39,12 @@
 .nav_login_cart {
   display: flex;
   gap: 2.5rem;
-  align-items: center;
+  align-items: center;  
 }
 
 .nav_cart {
   transform: scale(1.5);
+  cursor: pointer;
 }
 
 .nav_cart_count {
@@ -59,6 +60,7 @@
   font-size: 0.8rem;
   background: #aa4723;
   color: #fff;
+  cursor: pointer;
 }
 
 .nav_login_cart .search {
@@ -148,4 +150,8 @@
   .mobile_view {
     display: flex;
   }
+}
+
+.user-status {
+  vertical-align: text-bottom;
 }

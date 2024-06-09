@@ -1,0 +1,70 @@
+<div class="contactUs">
+  <div class="conatactUsContainer">
+      <div class="title"><b>Contact Us</b></div>
+      <div class="content">
+          <p class="contactText">You can reach out to us on <b>info@raatai.com</b> or via <b>8754545832</b></p>
+          <form [formGroup]="contactUsForm" (ngSubmit)="onSubmit()" id="contactUsForm">
+              <div class="user-details">
+                  <div class="input-box">
+                      <span class="details">First Name</span>
+                      <input type="text" formControlName="firstname" placeholder="Enter the First Name" />
+                      <div *ngIf="firstname?.invalid && (firstname?.dirty || firstname?.touched)" class="error">
+                          <div *ngIf="firstname?.errors?.['required']">First name is required.</div>
+                          <div *ngIf="firstname?.errors?.['minlength']">First name must be at least 2 characters long.</div>
+                          <div *ngIf="firstname?.errors?.['pattern']">First name should contain only letters and spaces.</div>
+                      </div>
+                  </div>
+
+                  <div class="input-box">
+                      <span class="details">Last Name</span>
+                      <input type="text" formControlName="lastname" placeholder="Enter the Last Name" />
+                      <div *ngIf="lastname?.invalid && (lastname?.dirty || lastname?.touched)" class="error">
+                          <div *ngIf="lastname?.errors?.['required']">Last name is required.</div>
+                          <div *ngIf="lastname?.errors?.['minlength']">Last name must be at least 2 characters long.</div>
+                          <div *ngIf="lastname?.errors?.['pattern']">Last name should contain only letters and spaces.</div>
+                      </div>
+                  </div>
+
+                  <div class="input-box">
+                      <span class="details">Email</span>
+                      <input type="email" formControlName="email" placeholder="Enter your email" />
+                      <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="error">
+                          <div *ngIf="email?.errors?.['required']">Email is required.</div>
+                          <div *ngIf="email?.errors?.['email']">Please enter a valid email address.</div>
+                      </div>
+                  </div>
+
+                  <div class="input-box">
+                      <span class="details">Contact Number</span>
+                      <input type="number" formControlName="contactnumber" placeholder="Enter your contact number" />
+                      <div *ngIf="contactnumber?.invalid && (contactnumber?.dirty || contactnumber?.touched)" class="error">
+                          <div *ngIf="contactnumber?.errors?.['required']">Contact number is required.</div>
+                          <div *ngIf="contactnumber?.errors?.['pattern']">Please enter a valid 10-digit contact number.</div>
+                      </div>
+                  </div>
+
+                  <div class="input-box">
+                      <span class="details">Subject</span>
+                      <input type="text" formControlName="subject" placeholder="Enter the subject" />
+                      <div *ngIf="subject?.invalid && (subject?.dirty || subject?.touched)" class="error">
+                          <div *ngIf="subject?.errors?.['required']">Subject is required.</div>
+                      </div>
+                  </div>
+
+                  <div class="input-box">
+                      <span class="details">Message</span>
+                      <textarea formControlName="message" placeholder="Describe your query in detail"></textarea>
+                      <div *ngIf="message?.invalid && (message?.dirty || message?.touched)" class="error">
+                          <div *ngIf="message?.errors?.['required']">Message is required.</div>
+                          <div *ngIf="message?.errors?.['minlength']">Message must be at least 10 characters long.</div>
+                      </div>
+                  </div>
+
+                  <div class="button_sub">
+                      <button type="submit" [disabled]="contactUsForm.invalid">Submit</button>
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>

@@ -23,6 +23,12 @@ export class HomeComponent implements OnInit {
         this.as.setCartCount(data.cart.items.length);
       })
     }
+
+    this.as.loginObs.subscribe(data=>{
+      if(!data){
+        this.userDetails = null;
+      }
+    })
     
   }
 }

@@ -8,12 +8,16 @@
         <li><a [routerLink]="'/shop'">Shop</a></li>
         <li><a>Services</a></li>
         <li><a>Blog</a></li>
+        <li><a [routerLink]="'/home/contact-us'">Contact Us</a></li>
       </ul>
-      <div class="nav_login_cart" [routerLink]="'/shop/cart'">
-        <div class="nav_cart">
-          <a><mat-icon  >shopping_cart</mat-icon></a>
+      <div class="nav_login_cart" >
+        <div [routerLink]="'/shop/cart'">
+          <div class="nav_cart">
+            <a><mat-icon >shopping_cart</mat-icon></a>
+          </div>
+          <div class="nav_cart_count">{{cartCount}}</div>
         </div>
-        <div class="nav_cart_count">{{cartCount}}</div>
+        
         <a>
           <div class="search">
             <mat-icon
@@ -23,14 +27,16 @@
             ></mat-icon>
           </div>
         </a>
-        <div class="user">
+        <div class="user" >
           <a>
             <mat-icon
               aria-hidden="false"
               aria-label="User icon"
               fontIcon="account_circle"
-              [routerLink]="'/login'"></mat-icon>
+              ></mat-icon>
           </a>
+          <span class="user-status" *ngIf="!loggedIn" [routerLink]="'/login'" >Login</span>
+          <span class="user-status" *ngIf="loggedIn" (click)="logout()">Logout</span>
         </div>
       </div>
     </div>

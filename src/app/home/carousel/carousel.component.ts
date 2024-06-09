@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-//import * as $ from 'jquery'; // Import jQuery
-//import 'bootstrap'; // Import Bootstrap JavaScript
 
 @Component({
   selector: 'app-carousel',
