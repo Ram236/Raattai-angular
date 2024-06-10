@@ -8,6 +8,7 @@ import { GiftingComponent } from './gifting/gifting.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { WorkshopsComponent } from './workshops/workshops.component';
 import { WeavingCurriculumComponent } from './weaving-curriculum/weaving-curriculum.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FormsModule , ReactiveFormsModule} from '@angular/forms';
     GiftingComponent,
     ContactUsComponent,
     WorkshopsComponent,
-    WeavingCurriculumComponent
+    WeavingCurriculumComponent,
+    AboutusComponent
     
   ],
   imports: [
