@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="Registercontainer">
+        <div class="title"><b>Weaving Curriculum</b></div>
+        <div class="content">
+            <form [formGroup]="weavingForm" (submit)="onSubmit()">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Educational Institution</span>
+                        <select formControlName="EducationalInstitution">
+                            <option value="" disabled selected>Select an Institution</option>
+                            <option value="kinderGarden">Kinder Garden</option>
+                            <option value="special">Special Children</option>
+                            <option value="middle">Middle</option>
+                            <option value="higherSec">Higher Secondary</option>
+                            <option value="college">College</option>
+                        </select>
+                        <div *ngIf="weavingForm.get('EducationalInstitution')?.invalid && (weavingForm.get('EducationalInstitution')?.dirty || weavingForm.get('EducationalInstitution')?.touched)" class="error">
+                            Educational Institution is required.
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Institution Name</span>
+                        <input type="text" formControlName="InstitutionName" placeholder="Enter the institution name" />
+                        <div *ngIf="weavingForm.get('InstitutionName')?.invalid && (weavingForm.get('InstitutionName')?.dirty || weavingForm.get('InstitutionName')?.touched)" class="error">
+                            <div *ngIf="weavingForm.get('InstitutionName')?.errors?.['required']">Institution Name is required.</div>
+                            <div *ngIf="weavingForm.get('InstitutionName')?.errors?.['pattern']">Institution Name should contain only characters and space.</div>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Person Name</span>
+                        <input type="text" formControlName="PersonToConnect" placeholder="Enter the person's name" />
+                        <div *ngIf="weavingForm.get('PersonToConnect')?.invalid && (weavingForm.get('PersonToConnect')?.dirty || weavingForm.get('PersonToConnect')?.touched)" class="error">
+                            <div *ngIf="weavingForm.get('PersonToConnect')?.errors?.['required']">Person Name is required.</div>
+                            <div *ngIf="weavingForm.get('PersonToConnect')?.errors?.['pattern']">Person Name should contain only characters and space.</div>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Email</span>
+                        <input type="email" formControlName="Email" placeholder="Enter your email" />
+                        <div *ngIf="weavingForm.get('Email')?.invalid && (weavingForm.get('Email')?.dirty || weavingForm.get('Email')?.touched)" class="error">
+                            <div *ngIf="weavingForm.get('Email')?.errors?.['required']">Email is required.</div>
+                            <div *ngIf="weavingForm.get('Email')?.errors?.['Email']">Invalid email format.</div>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Contact Number</span>
+                        <input type="number" formControlName="ContactNumber" placeholder="Enter your contact number" />
+                        <div *ngIf="weavingForm.get('ContactNumber')?.invalid && (weavingForm.get('ContactNumber')?.dirty || weavingForm.get('ContactNumber')?.touched)" class="error">
+                            <div *ngIf="weavingForm.get('ContactNumber')?.errors?.['required']">Contact Number is required.</div>
+                            <div *ngIf="weavingForm.get('ContactNumber')?.errors?.['pattern']">Contact Number should contain only 10 digits.</div>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Institution Address</span>
+                        <textarea formControlName="InstitutionAddress" placeholder="Enter the institution Address"></textarea>
+                        <div *ngIf="weavingForm.get('InstitutionAddress')?.invalid && (weavingForm.get('InstitutionAddress')?.dirty || weavingForm.get('InstitutionAddress')?.touched)" class="error">
+                            <div *ngIf="weavingForm.get('InstitutionAddress')?.errors?.['required']">Address is required.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="button_sub">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

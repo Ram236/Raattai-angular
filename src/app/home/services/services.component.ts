@@ -11,4 +11,12 @@ export class ServicesComponent {
   navigateToGifting() {
     this.router.navigate(['/home/gifting']);
   }
+
+  navigateToWorkshop(){
+    this.router.navigate(['/home/workshop']);
+  }
+
+  navigateToCurriculum(){
+    this.router.navigate(['/home/curriculum']);
+  }
 }

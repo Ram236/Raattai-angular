@@ -6,6 +6,8 @@ import { ServicesComponent } from './services/services.component'
 import {HomeRoutingModule} from './home-routing.module';
 import { GiftingComponent } from './gifting/gifting.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { WorkshopsComponent } from './workshops/workshops.component';
+import { WeavingCurriculumComponent } from './weaving-curriculum/weaving-curriculum.component';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
@@ -14,7 +16,9 @@ import { FormsModule , ReactiveFormsModule} from '@angular/forms';
     CarouselComponent,
     ServicesComponent,
     GiftingComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    WorkshopsComponent,
+    WeavingCurriculumComponent
     
   ],
   imports: [

@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="Registercontainer">
+        <div class="title"><b>Workshop</b></div>
+        <div class="content">
+            <form [formGroup]="workshopForm" (submit)="onSubmit()">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Name of the Industry</span>
+                        <input type="text" formControlName="Industry" placeholder="Enter the name of the Industry" />
+                        <div *ngIf="workshopForm.get('Industry')?.invalid && (workshopForm.get('Industry')?.dirty || workshopForm.get('Industry')?.touched)" class="error">
+                            <div *ngIf="workshopForm.get('Industry')?.errors?.['required']">Name of the Industry is required.</div>
+                            <div *ngIf="workshopForm.get('Industry')?.errors?.['pattern']">Name of the Industry should contain only letters and spaces.</div>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">No of People</span>
+                        <input type="number" formControlName="NoOfPeople" placeholder="Enter the number of people" min="1" max="10" />
+                        <div *ngIf="workshopForm.get('NoOfPeople')?.invalid && (workshopForm.get('NoOfPeople')?.dirty || workshopForm.get('NoOfPeople')?.touched)" class="error">
+                            <div *ngIf="workshopForm.get('NoOfPeople')?.errors?.['required']">Number of People is required.</div>
+                            <div *ngIf="workshopForm.get('NoOfPeople')?.errors?.['min'] || workshopForm.get('NoOfPeople')?.errors?.['max']">Number of People must be between 1 and 10.</div>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Date</span>
+                        <input type="Date" formControlName="Date" required />
+                        <div *ngIf="workshopForm.get('Date')?.invalid && (workshopForm.get('Date')?.dirty || workshopForm.get('Date')?.touched)" class="error">
+                            <div *ngIf="workshopForm.get('Date')?.errors?.['required']">Date is required.</div>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Person name to connect</span>
+                        <input type="text" formControlName="PersonToConnect" placeholder="Enter the person name to connect" />
+                        <div *ngIf="workshopForm.get('PersonToConnect')?.invalid && (workshopForm.get('PersonToConnect')?.dirty || workshopForm.get('PersonToConnect')?.touched)" class="error">
+                            <div *ngIf="workshopForm.get('PersonToConnect')?.errors?.['required']">Person name is required.</div>
+                            <div *ngIf="workshopForm.get('PersonToConnect')?.errors?.['pattern']">Person name should contain only letters and spaces.</div>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Email</span>
+                        <input type="email" formControlName="Email" placeholder="Enter your email" />
+                        <div *ngIf="workshopForm.get('Email')?.invalid && (workshopForm.get('Email')?.dirty || workshopForm.get('Email')?.touched)" class="error">
+                            <div *ngIf="workshopForm.get('Email')?.errors?.['required']">Email is required.</div>
+                            <div *ngIf="workshopForm.get('Email')?.errors?.['email']">Please enter a valid email address.</div>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Contact Number</span>
+                        <input type="number" formControlName="ContactNumber" placeholder="Enter contact number" />
+                        <div *ngIf="workshopForm.get('ContactNumber')?.invalid && (workshopForm.get('ContactNumber')?.dirty || workshopForm.get('ContactNumber')?.touched)" class="error">
+                            <div *ngIf="workshopForm.get('ContactNumber')?.errors?.['required']">Contact number is required.</div>
+                            <div *ngIf="workshopForm.get('ContactNumber')?.errors?.['pattern']">Please enter a valid 10-digit phone number.</div>
+                        </div>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Address</span>
+                        <textarea formControlName="Address" placeholder="Enter the address"></textarea>
+                        <div *ngIf="workshopForm.get('Address')?.invalid && (workshopForm.get('Address')?.dirty || workshopForm.get('Address')?.touched)" class="error">
+                            <div *ngIf="workshopForm.get('Address')?.errors?.['required']">Address is required.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button_sub">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+            <div *ngIf="errorMessage" class="fieldError">{{ errorMessage }}</div>
+        </div>
+    </div>
+</div>

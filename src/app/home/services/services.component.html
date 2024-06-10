@@ -3,7 +3,7 @@
     <div class="main_product">
         <div class="products" routerLink="weaving">
             <div class="box">
-                <div class="productCard">
+                <div class="productCard" (click)="navigateToCurriculum()">
                     <div class="image">
                         <img src="../../../assests/services.jpg" style="height: 200px;" alt="Weaving Curriculum" >
                     </div>
@@ -15,7 +15,7 @@
         </div>
         <div class="products" routerLink="workshop" >
             <div class="box"> 
-                <div class="productCard">
+                <div class="productCard" (click)="navigateToWorkshop()">
                     <div class="image">
                         <img src="./assests/services.jpg" alt="Workshop">
                     </div>
