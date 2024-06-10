@@ -43,6 +43,10 @@ export class LoginComponent {
       },
       (error) => {
         this.errorMessage = error.error.error;
+        const dialogRef = this.dialog.open(InfoDialogComponent, {
+          width: '500px',
+          data: this.errorMessage,
+        });
       }
     );
   }

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="cartitems.length > 0">
   <div class="row">
     <!-- items-->
     <div class="col-lg-10">
@@ -21,7 +21,7 @@
         {{ cartTotal | currency : "INR" }}
         <div class="btn-container">
           <button class="btn btn-primary" (click)="redirect()">Checkout & Pay</button>
-          <button class="btn btn-primary" (click)="clearCart()">Clear Cart</button>
+          <button class="btn btn-primary mt-3" (click)="clearCart()">Clear Cart</button>
         </div>
       </div>
     </div>
@@ -35,4 +35,11 @@
   <input type="hidden" id="encRequest" name="encRequest" [ngModel]="encRequest">
   <input type="hidden" name="access_code" id="access_code" [ngModel]="accessCode">
 </form>
+</div>
+
+
+<div class="container" *ngIf="cartitems.length === 0">
+  <div class="row">
+    <p class="contactText">Please add items to cart from <a [routerLink]="'/shop'">Shop</a> page</p>
+  </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, ViewChild, signal } from '@angular/core';
 import { CartService } from 'src/app/shop/cart/cart.service';
 import { LoginApiService } from '../login/login.service';
 import { AppService } from 'src/app/app.service';
@@ -11,6 +11,7 @@ import { AuthService } from '../services/auth.service';
   providers: [CartService],
 })
 export class HeaderComponent implements OnInit {
+  isMobileMenuVisible = false;
   showHeader = true;
   loggedIn = false;
   user: any;
@@ -29,6 +30,9 @@ export class HeaderComponent implements OnInit {
     });
   }
   ngOnInit(): void {}
+  toggleMobileMenu() {
+    this.isMobileMenuVisible = !this.isMobileMenuVisible;
+  }
 
   logout() {
     this.loginService.logout().subscribe({
@@ -41,7 +45,7 @@ export class HeaderComponent implements OnInit {
       },
       error: (err) => {
         console.log(err);
-        this.router.navigate(['/home'])
+        this.router.navigate(['/home']);
       },
     });
   }

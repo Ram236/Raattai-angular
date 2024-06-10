@@ -1,41 +1,41 @@
-<div class="row">
-  <h2 class="main_heading">Services</h2>
-
-  <div class="col-lg-4">
-    <div class="box">
-      <div class="productCard">
-        <div class="image">
-          <img src="../../../assets/img/services.jpg" alt="" />
+<div class="container">
+    <h2 class="main_heading">Services</h2>
+    <div class="main_product">
+        <div class="products" routerLink="weaving">
+            <div class="box">
+                <div class="productCard" (click)="navigateToCurriculum()">
+                    <div class="image">
+                        <img src="../../../assests/services.jpg" style="height: 200px;" alt="Weaving Curriculum" >
+                    </div>
+                    <div class="desc">
+                        <h1>Weaving Curriculum</h1>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="desc">
-          <h1>Weaving Studio</h1>
+        <div class="products" routerLink="workshop" >
+            <div class="box"> 
+                <div class="productCard" (click)="navigateToWorkshop()">
+                    <div class="image">
+                        <img src="./assests/services.jpg" alt="Workshop">
+                    </div>
+                    <div class="desc">
+                        <h1>Workshops</h1>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="products" routerLink="gifting">
+            <div class="box">
+                <div class="productCard" (click)="navigateToGifting()">
+                    <div class="image">
+                        <img src="./assests/services.jpg" alt="Gifting">
+                    </div>
+                    <div class="desc">
+                        <h1>Gifting</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="col-lg-4">
-    <div class="box">
-      <div class="productCard">
-        <div class="image">
-          <img src="../../../assets/img/services.jpg" alt="" />
-        </div>
-        <div class="desc">
-          <h1>Workshops</h1>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-4">
-    <div class="box">
-      <div class="productCard">
-        <div class="image">
-          <img src="../../../assets/img/services.jpg" alt="" />
-        </div>
-        <div class="desc">
-          <h1>Gifting</h1>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- <button class="read_more">View All</button> -->
 </div>
