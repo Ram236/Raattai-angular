@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin.component';
 
 import {CanActivateRoute} from '../shared/services/authguard.service';
+import { OrdersComponent } from './orders/orders.component';
 const routes: Routes = [
   {
     path: '',
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: AdminComponent,
+  },
+  {
+    path: 'orders',
+    component: OrdersComponent,
   },
   
 ];

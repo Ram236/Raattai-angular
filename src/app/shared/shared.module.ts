@@ -9,9 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { InfoDialogComponent } from './info-dialog/info-dialog.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { RpTableComponent } from './rp-table/rp-table.component';
+import { AdminTableComponent } from './admin-table/admin-table.component';
 import { MaterialModule } from '../material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RegisterComponent,
     InfoDialogComponent,
     ForgotPasswordComponent,
-    RpTableComponent
+    RpTableComponent,
+    AdminTableComponent,
   ],
   imports: [
     CommonModule,
@@ -31,7 +32,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     MaterialModule,
   ],
-  providers:[],
-  exports: [HeaderComponent, FooterComponent, InfoDialogComponent,RpTableComponent],
+  providers: [],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    InfoDialogComponent,
+    RpTableComponent,
+    AdminTableComponent,
+  ],
 })
 export class SharedModule {}

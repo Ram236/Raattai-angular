@@ -1,0 +1,5 @@
+<div class="container">
+    <div *ngIf="orders && orders.length > 0" class="mar20t">
+        <app-admin-table [tableData]="orders" [displayedColumns]="tableColumns"></app-admin-table>
+      </div>
+</div>

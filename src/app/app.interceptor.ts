@@ -17,7 +17,7 @@ export class AppInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     
-    if(req.url.includes('logout') || req.url.includes('add-to-cart') || (req.url.includes('my-cart'))){
+    if(req.url.includes('logout') || req.url.includes('add-to-cart') || (req.url.includes('my-cart') || (req.url.includes('orders')))){
       if(JSON.parse(localStorage.getItem('user')!)){
         let token = JSON.parse(localStorage.getItem('user')!)?.token;
         req =  req.clone({

@@ -18,5 +18,13 @@ export class SharedService {
     });
   }
 
+  getOrders(): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get(environment.apiUrl + 'orders/orders', {
+      headers: headers,
+    });
+  }
+
   
 }
