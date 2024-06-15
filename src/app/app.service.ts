@@ -10,6 +10,8 @@ export class AppService {
   private loginSubject = new BehaviorSubject(false);
   public loginObs = this.loginSubject.asObservable();
 
+  private AdminSubject = new BehaviorSubject(false);
+  public adminObs = this.AdminSubject.asObservable();
 
   private cartCountSubject = new BehaviorSubject(0);
   public cartCountObs = this.cartCountSubject.asObservable();
@@ -20,7 +22,9 @@ export class AppService {
   setLogin(state: boolean) {
     this.loginSubject.next(state);
   }
-
+  setAdmin(state: boolean) {
+    this.AdminSubject.next(state);
+  }
 
   setCartCount(count: number) {
     this.cartCountSubject.next(count);

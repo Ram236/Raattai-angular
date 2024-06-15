@@ -1,11 +1,10 @@
 <div class="container">
     <h3>Product Catalog</h3>
     <div class="raattai-product product-list">
-        <div class="card" style="width: 18rem;" *ngFor="let product of products" (click)="viewDetail(product)">
+        <div class="card" style="width: 18rem;margin: 10px;" *ngFor="let product of products" (click)="viewDetail(product)">
             <img [src]="product.image" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">{{product.title}}</h5>
-              <!-- <p class="card-text">{{product.desc}}</p> -->
+              <h5 class="card-title">{{product.title}}</h5>              
               <p class="card-text">Rs.{{product.price}}</p>              
             </div>
           </div>

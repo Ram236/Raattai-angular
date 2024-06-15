@@ -12,6 +12,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class HeaderComponent implements OnInit {
   isMobileMenuVisible = false;
+  isAdmin = false;
   showHeader = true;
   loggedIn = false;
   user: any;
@@ -23,13 +24,20 @@ export class HeaderComponent implements OnInit {
     private auth: AuthService
   ) {
     this.as.loginObs.subscribe((data) => {
-      this.loggedIn = data;
+      this.loggedIn = data;      
     });
+    this.as.adminObs.subscribe(data=>{
+      this.isAdmin = data;
+    })
     this.as.cartCountObs.subscribe((data) => {
       this.cartCount = data;
     });
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if(this.loggedIn && this.auth.isAdmin()){
+      this.isAdmin = true;
+    }
+  }
   toggleMobileMenu() {
     this.isMobileMenuVisible = !this.isMobileMenuVisible;
   }
@@ -38,6 +46,7 @@ export class HeaderComponent implements OnInit {
     this.loginService.logout().subscribe({
       next: () => {
         this.loggedIn = false;
+        this.isAdmin = false;
         this.auth.logout();
         this.as.setLogin(false);
         this.as.setCartCount(0);

@@ -23,4 +23,12 @@ export class AuthService {
     localStorage.removeItem('user');
     this.isAuthenticated = false;
   }
+
+  getUser(){
+    return JSON.parse(localStorage.getItem('user')!);
+  }
+
+  isAdmin(){
+    return this.getUser()?.user?.admin === 1;
+  }
 }

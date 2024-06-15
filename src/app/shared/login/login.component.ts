@@ -30,6 +30,7 @@ export class LoginComponent {
   onSubmit() {
     this.apiService.login(this.credentials).subscribe(
       (response) => {
+        let resp = response;
         this.auth.login(response); //store the user object under auth service
         const dialogRef = this.dialog.open(InfoDialogComponent, {
           width: '500px',
@@ -38,7 +39,13 @@ export class LoginComponent {
 
         dialogRef.afterClosed().subscribe((data) => {
           this.as.setLogin(true);
-          this.router.navigate(['/home']);
+          if(resp.user.admin){
+            this.as.setAdmin(true);
+            this.router.navigate(['/admin']);
+          }else {
+            this.router.navigate(['/home']);
+          }
+          
         });
       },
       (error) => {

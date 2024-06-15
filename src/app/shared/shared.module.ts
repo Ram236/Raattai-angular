@@ -8,9 +8,12 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { InfoDialogComponent } from './info-dialog/info-dialog.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { RpTableComponent } from './rp-table/rp-table.component';
+import { AdminTableComponent } from './admin-table/admin-table.component';
 import { MaterialModule } from '../material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { UserSettingsComponent } from './user-settings/user-settings.component';
+import { AddressFormComponent } from './address-form/address-form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     RegisterComponent,
     InfoDialogComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    RpTableComponent,
+    AdminTableComponent,
+    UserSettingsComponent,
+    AddressFormComponent,
   ],
   imports: [
     CommonModule,
@@ -29,7 +36,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     MaterialModule,
   ],
-  providers:[],
-  exports: [HeaderComponent, FooterComponent, InfoDialogComponent],
+  providers: [],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    InfoDialogComponent,
+    RpTableComponent,
+    AdminTableComponent,
+    MaterialModule
+  ],
 })
 export class SharedModule {}
