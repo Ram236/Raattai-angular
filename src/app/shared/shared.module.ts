@@ -12,6 +12,8 @@ import { RpTableComponent } from './rp-table/rp-table.component';
 import { AdminTableComponent } from './admin-table/admin-table.component';
 import { MaterialModule } from '../material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserSettingsComponent } from './user-settings/user-settings.component';
+import { AddressFormComponent } from './address-form/address-form.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ForgotPasswordComponent,
     RpTableComponent,
     AdminTableComponent,
+    UserSettingsComponent,
+    AddressFormComponent,
   ],
   imports: [
     CommonModule,

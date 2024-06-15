@@ -10,46 +10,61 @@
         <li><a [routerLink]="'/home/about-us'">About Us</a></li>
         <li><a [routerLink]="'/home/contact-us'">Contact Us</a></li>
       </ul>
-      <div class="nav_login_cart" >
+      <div class="nav_login_cart">
         <div [routerLink]="'/shop/cart'">
           <div class="nav_cart">
-            <a><mat-icon >shopping_cart</mat-icon></a>
+            <a><mat-icon>shopping_cart</mat-icon></a>
           </div>
-          <div class="nav_cart_count">{{cartCount}}</div>
+          <div class="nav_cart_count">{{ cartCount }}</div>
         </div>
-        
-        <a>
-          <div class="search">
+
+        <div class="search">
+          <a>
             <mat-icon
               aria-hidden="false"
               aria-label="Search icon"
               fontIcon="search"
             ></mat-icon>
-          </div>
-        </a>
-        <div class="user" >
+          </a>
+        </div>
+        <div class="settings" *ngIf="loggedIn" [routerLink]="'/user-settings'">
+          <mat-icon>settings</mat-icon>
+        </div>
+        <div class="user">
           <a>
             <mat-icon
               aria-hidden="false"
               aria-label="User icon"
               fontIcon="account_circle"
-              ></mat-icon>
+            ></mat-icon>
           </a>
-          <span class="user-status" *ngIf="!loggedIn" [routerLink]="'/login'" >Login</span>
-          <span class="user-status" *ngIf="loggedIn" (click)="logout()">Logout</span>
+          <span class="user-status" *ngIf="!loggedIn" [routerLink]="'/login'"
+            >Login</span
+          >
+          <span class="user-status" *ngIf="loggedIn" (click)="logout()"
+            >Logout</span
+          >
         </div>
       </div>
     </div>
     <div class="menu_icon" (click)="toggleMobileMenu()">
-      <mat-icon aria-hidden="false" aria-label="Menu icon" fontIcon="menu"></mat-icon>
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Menu icon"
+        fontIcon="menu"
+      ></mat-icon>
     </div>
   </div>
   <div class="mobile_view" *ngIf="isMobileMenuVisible">
     <div class="close_icon" (click)="toggleMobileMenu()">
-      <mat-icon aria-hidden="false" aria-label="Close icon" fontIcon="close"></mat-icon>
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Close icon"
+        fontIcon="close"
+      ></mat-icon>
     </div>
     <ul class="mobile_nav_menu">
-      <li><a [routerLink]="'/shop'"  (click)="toggleMobileMenu()">Shop</a></li>
+      <li><a [routerLink]="'/shop'" (click)="toggleMobileMenu()">Shop</a></li>
       <li><a (click)="toggleMobileMenu()">Services</a></li>
       <li><a (click)="toggleMobileMenu()">Blog</a></li>
       <li>
@@ -75,18 +90,16 @@
         </a>
       </li>
       <li>
-        <a (click)="toggleMobileMenu()"  [routerLink]="'/shop/cart'">
+        <a (click)="toggleMobileMenu()" [routerLink]="'/shop/cart'">
           <div class="nav_cart">
             <mat-icon>shopping_cart</mat-icon>
-            <div class="nav_cart_count">{{cartCount}}</div>
+            <div class="nav_cart_count">{{ cartCount }}</div>
           </div>
         </a>
       </li>
     </ul>
   </div>
 </div>
-
-
 
 <div class="main" *ngIf="isAdmin">
   <div class="navbar">
@@ -96,18 +109,18 @@
     <div class="show">
       <ul class="nav_menu">
         <li><a [routerLink]="'/admin/products'">Products</a></li>
-        <li><a >Payments</a></li>
+        <li><a>Payments</a></li>
         <li><a [routerLink]="'/admin/orders'">Orders</a></li>
-        <li><a >Enquiries</a></li>
+        <li><a>Enquiries</a></li>
       </ul>
-      <div class="nav_login_cart" >
+      <div class="nav_login_cart">
         <!-- <div [routerLink]="'/shop/cart'">
           <div class="nav_cart">
             <a><mat-icon >shopping_cart</mat-icon></a>
           </div>
           <div class="nav_cart_count">{{cartCount}}</div>
         </div> -->
-        
+
         <a>
           <div class="search">
             <mat-icon
@@ -117,29 +130,46 @@
             ></mat-icon>
           </div>
         </a>
-        <div class="user" >
+        <div class="settings" *ngIf="loggedIn" [routerLink]="'/user-settings'">
+          <mat-icon>settings</mat-icon>
+        </div>
+        <div class="user">
           <a>
             <mat-icon
               aria-hidden="false"
               aria-label="User icon"
               fontIcon="account_circle"
-              ></mat-icon>
+            ></mat-icon>
           </a>
-          <span class="user-status" *ngIf="!loggedIn" [routerLink]="'/login'" >Login</span>
-          <span class="user-status" *ngIf="loggedIn" (click)="logout()">Logout</span>
+          <span class="user-status" *ngIf="!loggedIn" [routerLink]="'/login'"
+            >Login</span
+          >
+          <span class="user-status" *ngIf="loggedIn" (click)="logout()"
+            >Logout</span
+          >
         </div>
       </div>
     </div>
     <div class="menu_icon" (click)="toggleMobileMenu()">
-      <mat-icon aria-hidden="false" aria-label="Menu icon" fontIcon="menu"></mat-icon>
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Menu icon"
+        fontIcon="menu"
+      ></mat-icon>
     </div>
   </div>
   <div class="mobile_view" *ngIf="isMobileMenuVisible">
     <div class="close_icon" (click)="toggleMobileMenu()">
-      <mat-icon aria-hidden="false" aria-label="Close icon" fontIcon="close"></mat-icon>
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Close icon"
+        fontIcon="close"
+      ></mat-icon>
     </div>
     <ul class="mobile_nav_menu">
-      <li><a [routerLink]="'/shop'"  (click)="toggleMobileMenu()">Products</a></li>
+      <li>
+        <a [routerLink]="'/shop'" (click)="toggleMobileMenu()">Products</a>
+      </li>
       <li><a (click)="toggleMobileMenu()">Stocks</a></li>
       <li><a (click)="toggleMobileMenu()">Enquiries</a></li>
       <li>
@@ -164,7 +194,6 @@
           </div>
         </a>
       </li>
-      
     </ul>
   </div>
 </div>

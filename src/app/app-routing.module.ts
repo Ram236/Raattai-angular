@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './shared/login/login.component'
 import { RegisterComponent } from './shared/register/register.component';
 import { ForgotPasswordComponent } from './shared/forgot-password/forgot-password.component';
+import { UserSettingsComponent } from './shared/user-settings/user-settings.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,10 @@ const routes: Routes = [
     component:ForgotPasswordComponent
   },
   {
+    path:'user-settings',
+    component:UserSettingsComponent
+  },
+  {
     path:'home',
     loadChildren:()=>import('./home/home.module').then(m=>m.HomeModule)
   },
@@ -31,6 +36,7 @@ const routes: Routes = [
     path: 'shop',
     loadChildren: () => import('./shop/shop.module').then(m => m.ShopModule)
   },
+  
   {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)

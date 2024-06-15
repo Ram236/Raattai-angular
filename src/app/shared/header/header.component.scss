@@ -64,11 +64,16 @@
 }
 
 .nav_login_cart .search {
+  cursor: pointer;
   transform: scale(1.5);
 }
 
 .user {
   font-size: 20px;
+  cursor: pointer;
+}
+
+.settings {
   cursor: pointer;
 }
 

@@ -5,7 +5,7 @@ import { product } from '../../shop/product/product';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SharedService {
   constructor(private http: HttpClient) {}
@@ -26,5 +26,14 @@ export class SharedService {
     });
   }
 
-  
+  getDeliveryAddressList(): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get(environment.apiUrl + 'user/deliveryAddressList', {
+      headers: headers,
+    });
+  }
+  addDeliveryAddress(addressObj: any): Observable<any> {
+    return this.http.post<any>(environment.apiUrl+'user/addAddress', addressObj);
+  }
 }
