@@ -90,15 +90,15 @@
 
 <div class="main" *ngIf="isAdmin">
   <div class="navbar">
-    <a [routerLink]="'/home'">
+    <a [routerLink]="'/admin'">
       <img src="../../../assets/img/logo.webp" alt="Raattai" class="logo" />
     </a>
     <div class="show">
       <ul class="nav_menu">
-        <li><a [routerLink]="'/shop'">Products</a></li>
-        <li><a [routerLink]="'/home/services'">Stocks</a></li>
+        <li><a [routerLink]="'/admin/products'">Products</a></li>
+        <li><a >Payments</a></li>
         <li><a [routerLink]="'/admin/orders'">Orders</a></li>
-        <li><a [routerLink]="'/home/contact-us'">Enquiries</a></li>
+        <li><a >Enquiries</a></li>
       </ul>
       <div class="nav_login_cart" >
         <!-- <div [routerLink]="'/shop/cart'">

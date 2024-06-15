@@ -4,6 +4,7 @@ import { AdminComponent } from './admin.component';
 
 import {CanActivateRoute} from '../shared/services/authguard.service';
 import { OrdersComponent } from './orders/orders.component';
+import { AdminProductsComponent } from './admin-products/admin-products.component';
 const routes: Routes = [
   {
     path: '',
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: AdminComponent,
+  },
+  {
+    path: 'products',
+    component: AdminProductsComponent,
   },
   {
     path: 'orders',

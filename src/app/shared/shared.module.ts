@@ -39,6 +39,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     InfoDialogComponent,
     RpTableComponent,
     AdminTableComponent,
+    MaterialModule
   ],
 })
 export class SharedModule {}

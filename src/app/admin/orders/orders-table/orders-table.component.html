@@ -1,10 +1,10 @@
-<section class="example-container mat-elevation-z8" tabindex="0">
+<section class="mat-elevation-z8" tabindex="0">
   <div class="example-header">
     <mat-form-field class="mar20lr">
       <input
         matInput
         (keyup)="applyFilter($any($event.target).value)"
-        placeholder="Search"
+        placeholder="Filter"
       />
     </mat-form-field>
   </div>
@@ -15,46 +15,31 @@
     class="mat-elevation-z8"
     id="receipt-payment-table"
   >
-    <ng-container matColumnDef="title">
-      <th mat-header-cell *matHeaderCellDef>Name</th>
-      <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+    <ng-container matColumnDef="order_id">
+      <th mat-header-cell *matHeaderCellDef>Order ID</th>
+      <td mat-cell *matCellDef="let element">{{ element.order_id }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="desc">
-      <th mat-header-cell *matHeaderCellDef>Description</th>
-      <td mat-cell *matCellDef="let element">{{ element.desc }}</td>
+    <ng-container matColumnDef="order_status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let element">{{ element.order_status }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="price">
+    <ng-container matColumnDef="amount">
       <th mat-header-cell *matHeaderCellDef>Price(INR)</th>
-      <td mat-cell *matCellDef="let element">{{ element.price }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.amount }}</td>
     </ng-container>
 
     <ng-container matColumnDef="edit">
       <th mat-header-cell *matHeaderCellDef>Preview</th>
       <td mat-cell *matCellDef="let element">
         <mat-icon
-                        title="preview"
-                        class="edit-icon"
-                        aria-hidden="false"
-                        aria-label="edit icon"
-                       
-                        >preview
-                      </mat-icon>
-      </td>
-    </ng-container>
-
-    <ng-container matColumnDef="action">
-      <th mat-header-cell *matHeaderCellDef>Delete</th>
-      <td mat-cell *matCellDef="let element">
-        <mat-icon
-          title="delete"
-          class="delete-icon"
+          title="preview"
+          class="edit-icon"
           aria-hidden="false"
-          aria-label="Delete icon"
-          (click)="delete_item(element)"
-          >delete</mat-icon
-        >
+          aria-label="edit icon"
+          >preview
+        </mat-icon>
       </td>
     </ng-container>
 
